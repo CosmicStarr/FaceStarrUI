@@ -1,0 +1,106 @@
+.top-Of-Container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title{
+    text-align: center;
+}
+.title h3{
+    font-size: 2rem;
+}
+.title p{
+    opacity: 0.5;
+}
+.close{
+    align-self: start;
+}
+.boardline{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.register-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.register-form p{
+    font-size: .8rem;
+    opacity: 0.5;
+}
+.register-form button{
+    background-color: #f0f000;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    width: 35%;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+.register-form button:hover{
+    background-color: #ffff0e;
+}
+.form-Information{
+    gap: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.form-group{
+    width: 50%;
+}
+.form-group input{
+    padding: .5rem;
+    width: 100%;
+    border-radius: 5px;
+    border: .5px solid #00000080;
+}
+.form-group-email{
+    width: 100%;
+}
+.form-group-email input{
+    padding: .5rem;
+    width: 100%;
+    border-radius: 5px;
+    border: .5px solid #00000080;
+}
+.form-group-password{
+    width: 100%;
+}
+.form-group-password input{
+    padding: .5rem;
+    width: 100%;
+    border-radius: 5px;
+    border: .5px solid #00000080;
+}
+.form-group-confirm{
+    width: 100%;
+}
+.form-group-confirm input{
+    padding: .5rem;
+    width: 100%;
+    border-radius: 5px;
+    border: .5px solid #00000080;
+}
+.birth-Gen{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.birthday-Container{
+    width: 45%;
+}
+.birthday-Container input{
+    width: 100%;
+}
+.gender-Title-Container{
+    width: 50%;
+}
+.Gender-Container{
+    display: flex;
+    height: 1.6rem;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+}

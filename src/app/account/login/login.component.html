@@ -1,0 +1,53 @@
+<div class="LoginContainer">
+    <div class="LoginTop">
+        <div class="LeftSide">
+            <img class="LeftSideImg" src="../assets/Images/logo4.png" alt="">
+        </div>
+        <div class="RightSide">
+            <form class="register-form" [formGroup]="loginForm" autocomplete="off">
+                <div class="form-group">
+                    <input formControlName="email" type="email" name="email" placeholder="Enter an email">
+                    <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">An Email is required!</span>
+                </div>
+                <div class="form-group">
+                    <input formControlName="password" type="password" name="password" placeholder="Password">
+                           <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Password is required!</span>
+                </div> 
+                <!-- <ng-container *ngIf="(currentUser$|async)">
+                    <div class="form-group"  >
+                        <label for="inputRole">User Role (THIS IS A ROLE)</label>
+                        <select id="inputRole" class="form-control" #role (change)="roleChange(role?.value)" formControlName="role">
+                            <option value="" disabled>Choose a role</option>
+                            <option *ngFor="let item of roleOptions" [ngValue]="item" >
+                            {{item}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputClaim">Claim (THIS IS A Claim)</label>
+                        <select id="inputClaim" class="form-control" #JobDepartment (change)="claimChange(JobDepartment?.value)" formControlName="JobDepartment">
+                            <option value="" disabled>Choose a Developer Type</option>
+                            <option *ngFor="let item of developerType" [ngValue]="item">
+                            {{item}}
+                            </option>
+                        </select>
+                    </div>
+                </ng-container> -->
+                <button [disabled]="!loginForm.valid" [ngClass]="{'greyColor': !loginForm.valid}" type="submit" class="LoginButton" (click)="onSubmit()">Log in</button>
+                <a class="Fpassword">Forgot Password?</a>
+                <hr class="Hline">
+                <div class="Register-Button-Container">
+                    <button class="RegisterButton" (click)="modal.open('modelR-1');">Register here!</button>
+                </div>
+                <!-- <a routerLink="/wall/global">Wall</a> -->
+            </form>
+        </div>
+    </div>
+    <footer class="LoginFooter">
+        
+    </footer>
+</div>
+
+<jw-modal id="modelR-1">
+    <app-register></app-register>
+</jw-modal>

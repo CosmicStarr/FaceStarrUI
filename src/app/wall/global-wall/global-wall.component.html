@@ -1,0 +1,70 @@
+<app-nav-bar></app-nav-bar>
+<div class="Wall-Container">
+    <div class="Left-Side-Wall">
+        <h1>Left</h1>
+    </div>
+    <div class="Middle-Wall-Container">
+        <div class="ReelsAndStory-Container">
+            <div class="actual-Story-Reel-Container">
+                <a routerLinkActive="active" (click)="showOptions()" [ngClass]="{'active-Color': !showReel}"><h5><i class="fa fa-book"></i> Story</h5></a>
+                |
+                <a routerLinkActive="active" (click)="showOptions1()" [ngClass]="{'active-Color': !showStory}"><h5><i class="fa fa-tv"></i> Reels</h5></a> 
+            </div>
+            <div class="Story-Reels-Information">
+                <div class="Story-Container"  [ngClass]="{'open': showStory}">
+                    <img class="Story-Img" src="../assets/Images/2000-Calorie-Keto-Diet.jpg" alt="">
+                 </div>
+                 <div class="Reels-Container"[ngClass]="{'open': showReel}">
+                     <img class="Reels-Img" src="../assets/Images/8346_p26_l.jpg" alt="">
+                 </div>
+            </div>
+        </div>
+        <div class="Create-a-Post-Container">
+            <div class="actual-Create-a-Post">
+                <div class="img-Input-Information">
+                    <div class="img-Info-Container">
+                        <img class="post-img2" src="../assets/Images/8346_p26_l.jpg" alt="">
+                    </div>
+                    <form [formGroup]="commentForm" class="input-Container-Create">
+                        <input formControlName="comment" class="create-a-post-Input" value="What on your mind?" type="text" name="comment" id="commentId">
+                    </form>  
+                </div>
+                <div class="post-Form">
+                    <div class="Buttons">
+                        <a (click)="modal.open('modelR-2');">Photo</a>
+                        <a>Video</a>
+                        <a>Feeling</a>
+                    </div>
+                </div>        
+            </div>
+        </div>
+        <div class="Post-Container">
+            <div class="actualPost-Container">
+                <div class="information">
+                    <img class="post-img1" src="../assets/Images/8346_p26_l.jpg" alt="">
+                    <div class="Moreinformation">
+                        <h5>heading</h5>
+                        <p>More information</p>
+                    </div>
+                </div>
+                <div class="post-Media-Container">
+                    <img class="post-img" src="../assets/Images/8346_p26_l.jpg" alt="">
+                </div>
+                <form class="post-Form">
+                    <div class="Buttons1">
+                        <a>Like</a>
+                        <a>Comment</a>
+                        <a>Share</a>
+                    </div>
+                    <input class="input-post" type="text">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="Right-Side-Wall">
+        <h1>Right</h1>
+    </div>
+</div>
+<jw-modal id="modelR-2">
+    <app-upload-image></app-upload-image>
+</jw-modal>

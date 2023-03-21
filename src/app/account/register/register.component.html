@@ -1,0 +1,80 @@
+<div class="top-Of-Container">
+    <div class=""></div>
+    <div class="title">
+        <h3>Sign Up</h3>
+        <p>It's quick and easy!</p>
+    </div>
+    <div class="close">X</div>
+</div>
+<div class="boardline">
+    <hr>
+</div>
+<form class="register-form"[formGroup]="registerForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="form-Information">
+        <div class="form-group">
+            <input type="text" name="firstName" placeholder="First Name">
+        </div>
+        <div class="form-group">
+            <input type="text" name="lastName" placeholder="Last Name">
+        </div>
+    </div>
+    <div class="form-group-email">
+        <input formControlName="email" type="email" name="email" id="email"placeholder="Email">
+        <span *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">An Email is required!</span>
+    </div>
+    <div class="form-group-password">
+        <input formControlName="password" type="password" name="password" placeholder="New Password">
+        <span *ngIf="registerForm.get('password').errors && registerForm.get('password').dirty">Passwords words do not match!</span>
+    </div>
+    <div class="form-group-confirm">
+        <input formControlName="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password">	  
+    </div>
+    <div class="birth-Gen">
+        <div class="birthday-Container">
+            <span>Birthday?</span>
+            <input type="date" placeholder="Birthday">
+        </div> 
+        <div class="gender-Title-Container">
+            <span>Gender?</span>   
+            <div class="Gender-Container">
+                <div class="Male">
+                    <label for="male"> Male </label><input type="radio" name="male"> 
+                </div> 
+                <div class="Female">
+                    <label for="female"> Female </label> <input type="radio" name="female"> 
+                </div>
+                <div class="Other?">
+                    <label for="other?"> Other? </label> <input type="radio" name="other?"> 
+                </div> 
+            </div> 
+        </div>
+    </div>
+    <p>People who use our service may have uploaded your contact information 
+    to FaceStarr. Learn more.</p>
+    <p>By clicking Sign Up, you agree to our Terms, 
+        Privacy Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</p>
+
+    <!-- <ng-container *ngIf="(currentUser$|async)">
+        <div class="form-group"  >
+            <label for="inputRole">User Role (THIS IS A ROLE)</label>
+            <select id="inputRole" class="form-control" #role (change)="roleChange(role?.value)" formControlName="role">
+                <option value="" disabled>Choose a role</option>
+                <option *ngFor="let item of roleOptions" [ngValue]="item" >
+                {{item}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="inputClaim">Claim (THIS IS A Claim)</label>
+            <select id="inputClaim" class="form-control" #JobDepartment (change)="claimChange(JobDepartment?.value)" formControlName="JobDepartment">
+                <option value="" disabled>Choose a Developer Type</option>
+                <option *ngFor="let item of developerType" [ngValue]="item">
+                {{item}}
+                </option>
+            </select>
+        </div>
+    </ng-container> -->
+    <button type="submit" class="">Register <i class=""></i></button>
+    <a routerLink="/wall/global">Wall</a>
+</form>
+

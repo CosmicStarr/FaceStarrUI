@@ -1,0 +1,34 @@
+<div class="PostaPicContainer">
+    <div class="ModalHeader">
+        <div class=""></div>
+        <p class="PostTitle">Create Post</p>
+        <p class="PostClose"><i class="fa fa-close"></i></p>
+    </div>
+    <div class="ModalInformation">
+        <img class="post-img3" src="../assets/Images/2000-Calorie-Keto-Diet.jpg" alt="">
+        <div class="MoreInfo">
+            <h5>Normand Jean</h5>
+            <h5>Information</h5>
+        </div>
+    </div>
+    <form enctype="multipart/form-data" [formGroup]="uploadPostForm" class="Overflow-Container">
+        <div class="inputContainer">
+            <input formControlName="comments" type="text" placeholder="Whats on your mind?"><i class="fa fa-"></i>
+        </div>
+        <div class="DropContainer"
+        style="inset: calc(0% + 0px) calc(0% + 0px) calc(33.3333% + 1.01px);" 
+        appDrag
+        (FilesInformation) = "pictureSelect($event)">
+            <div class="img-Container">
+                <img draggable="false" *ngFor="let i of uploadedImage" class="imgDiv" [src]="i" alt="">
+                <video *ngFor="let v of uploadedVideo" class="videoDiv" preload="metadata">
+                    <source [src]="v" type="video/mp4">
+                </video>
+                <p id="pTag" #pTag> Drag/drop a <a (click)="fileInput.click()">pic</a></p>
+                <a class="MorePics" [ngClass]="{'open': show}" (click)="fileInput.click()"> Click here to add more!</a>
+            </div>
+        </div>
+        <input formControlName="file" class="DropContainerPic" multiple type="file" hidden #fileInput accept="image/png,video/mp4,image/jpeg" (change)="pictureSelected($event)"/>
+    </form>
+    <button [disabled]="uploadedVideo.length === 0 && uploadedImage.length === 0 && uploadPostForm.get('comments').value ==''" [ngClass]="{'lightYellow':uploadedVideo.length === 0 && uploadedImage.length === 0 && uploadPostForm.get('comments').value ==''}" (click)="onSubmit()" class="post-Button">Post</button>
+</div>
