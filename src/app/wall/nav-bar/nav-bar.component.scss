@@ -1,0 +1,22 @@
+.FaceNav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.FaceLogo{
+    width: 25%;
+}
+.FaceLogo img{
+    height: 3rem;
+    width: 3rem;
+}
+.FaceSearch{
+    width: 35%;
+}
+.FaceSearch input{
+    width: 100%;
+}
+.FaceUserETC{
+    width: 25%;
+}

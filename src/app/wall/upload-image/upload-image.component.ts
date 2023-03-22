@@ -39,6 +39,7 @@ post:IPost
       this.uploadedPicVidApi.push(event)
       //pushing the video to the src so user can confirm video will be uploaded!
       toBase64(event).then((value:string)=>this.uploadedVideo.push(value))
+      this.removeDragandDropaPicElement()
       return
     }
     this.uploadedPicVidApi.push(event)

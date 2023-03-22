@@ -38,18 +38,27 @@
                 </div>        
             </div>
         </div>
-        <div class="Post-Container">
+        <div class="Post-Container" *ngFor="let item of globalPost">
             <div class="actualPost-Container">
                 <div class="information">
                     <img class="post-img1" src="../assets/Images/8346_p26_l.jpg" alt="">
                     <div class="Moreinformation">
                         <h5>heading</h5>
-                        <p>More information</p>
+                        <p>{{item.comments}}</p>
                     </div>
                 </div>
-                <div class="post-Media-Container">
-                    <img class="post-img" src="../assets/Images/8346_p26_l.jpg" alt="">
-                </div>
+                <ng-container *ngIf="item.photo">
+                    <div class="post-Media-Container">
+                        <img class="post-img" src="{{item.photo}}" alt="">
+                    </div>
+                </ng-container>
+                <ng-container>
+                    <div class="video-Container">
+                        <video width="600" height="400" controls>
+                            <source src="{{item.videos}}" type="video/mp4">
+                        </video>
+                    </div>
+                </ng-container>
                 <form class="post-Form">
                     <div class="Buttons1">
                         <a>Like</a>
