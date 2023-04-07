@@ -1,7 +1,5 @@
 import { Directive, EventEmitter, HostBinding, HostListener, Output } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { fileInfo } from '../Models/file';
-import { toBase64 } from '../Models/uploadToBase64';
 
 @Directive({
   selector: '[appDrag]'

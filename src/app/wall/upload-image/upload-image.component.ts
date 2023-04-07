@@ -23,7 +23,7 @@ show:boolean = true
 uploadPostForm:FormGroup
 baseUrl = environment.baseUrl;
 post:IPost
-@Output() onUploadImageSelected = new EventEmitter()
+@Output() onUploadImageSelected = new EventEmitter<File>()
 
   
   constructor(private wallService:WallService) {}

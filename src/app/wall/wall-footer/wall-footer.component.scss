@@ -1,0 +1,11 @@
+.wall-footer-Container{
+    display: flex;
+    color: grayscale($color: #4b4a4a);
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 13%;
+    padding: .5rem;
+}
+.wall-footer-Container p{
+    font-size: .7rem;
+}

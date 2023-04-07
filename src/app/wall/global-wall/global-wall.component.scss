@@ -6,6 +6,7 @@
     overflow: hidden;
 }
 .Left-Side-Wall{
+    padding: 1rem;
     height: 100vh;
     width: 25%;
 }
@@ -110,7 +111,6 @@
     padding: 1rem;
 }
 .Post-Container{
-    
     display: flex;
     width: 70%;
     flex-direction: column;
@@ -129,8 +129,22 @@
     height: 100%;
 }
 .post-Media-Container{
+    height: 100%;
+    width: 100%;
+}
+.video-Container{  
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+.video-Container video{
+    height: 100%;
+    width: 100%;
+}
+.video-Img-Container{
+    display: flex;
     height: 75%;
-    width: 95%;
+    width: 100%;
 }
 .information{
     height: 5rem;
@@ -155,6 +169,7 @@
     width: 2rem;
 }
 .post-img{
+    overflow-x: scroll;
     padding: .5rem;
     height: 100%;
     width: 100%;
@@ -165,6 +180,78 @@
     align-items: center;
     width: 100%;
     height: 50%;
+    position: relative;
+}
+.menu-show{
+    display: none;
+    -webkit-transition: .5s all ease;
+    -o-transition: .5s all ease;
+    transition: .5s all ease;
+}
+.LikeStatus{
+    position: absolute;
+    background-color: aliceblue;
+    border-radius: 5px;
+    left: 70px;
+    bottom: 150px;
+}
+.triangle{
+    position: absolute;
+    background-color: aliceblue;
+    height: 8px;
+    width: 20px;
+    border-right:none;
+    border-bottom:none;
+    border-bottom-right-radius: 20rem;
+    transform: rotate(225deg);
+    left: 70px;
+    bottom: 2px;
+}
+.Cool{
+    color: aliceblue;
+    background-size: contain;
+    background-position: center;
+    background-image: url('../../../assets/Images/Cool.gif');
+    border:none;
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.Wonderful{
+    background-size: contain;
+    background-position: center;
+    background-image: url('../../../assets/Images/Whatever.gif');
+    border:none;
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.Amazing{
+    background-size: contain;
+    background-position: center;
+    background-image: url('../../../assets/Images/Love.gif');
+    border:none;
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.Outstanding{
+    background-size: contain;
+    background-position: center;
+    background-image: url('../../../assets/Images/Wonderful.gif');
+    border:none;
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+.TooCosmic{
+    background-size: contain;
+    background-position: center;
+    background-image: url('../../../assets/Images/TooCosmic.gif');
+    border:none;
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
 }
 .Buttons{
     border-top: 1px solid;
@@ -175,6 +262,7 @@
     height: 100%;
 }
 .Buttons1{
+    cursor: pointer;
     border-top: 1px solid;
     display: flex;
     align-items: center;
@@ -199,8 +287,5 @@
 .active-Color{
     border-bottom: 3px solid rgb(0, 0, 255,0.8);
 }
-.video-Container{
-    background-color: black;
-    width: fit-content;
-    height: fit-content;
-}
+
+

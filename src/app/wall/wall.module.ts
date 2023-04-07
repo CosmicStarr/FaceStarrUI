@@ -8,6 +8,9 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { UploadImageComponent } from './upload-image/upload-image.component';
 import { DragDirective } from './drag.directive';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { LeftWallComponent } from './left-wall/left-wall.component';
+import { RightWallComponent } from './right-wall/right-wall.component';
+import { WallFooterComponent } from './wall-footer/wall-footer.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     GlobalWallComponent,
     UploadImageComponent,
     DragDirective,
-    NavBarComponent
+    NavBarComponent,
+    LeftWallComponent,
+    RightWallComponent,
+    WallFooterComponent,
   ],
   imports: [
     CommonModule,
@@ -23,6 +29,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ReactiveFormsModule,
     ModalModule,
     FileUploadModule,
+    
   ],
   exports:[
     

@@ -8,19 +8,24 @@
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     // font-family: 'Merriweather', serif;
-    font-weight: 700;
+    font-weight: 400;
 }
 .mat-h5, .mat-typography .mat-h5, .mat-typography h5 {
     font: 400 calc(14px * 0.83)/20px Roboto, sans-serif;
     margin: 0 0 0px;
 }
-
+.fixed{
+  overflow-y: hidden;
+}
 input:focus, textarea:focus, select:focus{
   outline: none;
 }
+.a{
+  cursor: pointer;
+}
 /* width */
 ::-webkit-scrollbar {
-    width: .5px;
+    width: .2px;
   }
   
   /* Track */

@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: .2rem;
 }
 .FaceLogo{
     width: 25%;
@@ -13,10 +14,52 @@
 }
 .FaceSearch{
     width: 35%;
+    position: relative;
 }
 .FaceSearch input{
+    padding: .5rem;
     width: 100%;
+    border-radius: 50px;
+    border: 1px solid rgb(0, 0, 0,0.5);
+    
+}
+.moveSearch{
+    position: absolute;
+    font-size: 1.2rem;
+    top: 10px;
+    right: 13px;
 }
 .FaceUserETC{
+    display: flex;
+    justify-content: flex-end;
     width: 25%;
+}
+.FaceUserETC i {
+    font-size: 1.3rem;
+    vertical-align: -webkit-baseline-middle;
+    margin-top: 0.6rem;
+}
+.theWorld{
+    text-align: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50px;
+    background-color: rgb(255, 215, 0);
+}
+.theMessages{  
+    margin-left: .5rem;
+    text-align: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50px;
+    background-color: rgb(255, 215, 0);
+}
+.theProfilePic{
+    margin-left: .5rem;
+}
+.FaceUserETC img{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50px;
+    background-position: center;
 }

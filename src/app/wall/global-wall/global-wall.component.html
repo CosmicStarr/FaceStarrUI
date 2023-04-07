@@ -1,7 +1,7 @@
 <app-nav-bar></app-nav-bar>
 <div class="Wall-Container">
     <div class="Left-Side-Wall">
-        <h1>Left</h1>
+        <app-left-wall></app-left-wall>
     </div>
     <div class="Middle-Wall-Container">
         <div class="ReelsAndStory-Container">
@@ -26,54 +26,73 @@
                         <img class="post-img2" src="../assets/Images/8346_p26_l.jpg" alt="">
                     </div>
                     <form [formGroup]="commentForm" class="input-Container-Create">
-                        <input formControlName="comment" class="create-a-post-Input" value="What on your mind?" type="text" name="comment" id="commentId">
+                        <input formControlName="comments" class="create-a-post-Input" value="What on your mind?" type="text" name="comment" id="commentId">
                     </form>  
                 </div>
                 <div class="post-Form">
                     <div class="Buttons">
-                        <a (click)="modal.open('modelR-2');">Photo</a>
-                        <a>Video</a>
-                        <a>Feeling</a>
+                        <a (click)="modal.open('modelR-2');"><i class="fa fa-camera"></i> Photo</a>
+                        <a><i class="fa fa-video-camera"></i> Video</a>
+                        <a><i class="fa fa-hand-peace-o"></i> Feeling</a>
                     </div>
                 </div>        
             </div>
         </div>
-        <div class="Post-Container" *ngFor="let item of globalPost">
-            <div class="actualPost-Container">
-                <div class="information">
-                    <img class="post-img1" src="../assets/Images/8346_p26_l.jpg" alt="">
-                    <div class="Moreinformation">
-                        <h5>heading</h5>
-                        <p>{{item.comments}}</p>
+        <ng-container >
+            <div class="Post-Container"*ngFor="let post of globalPost" >
+                <div class="actualPost-Container">
+                    <div class="information">
+                        <img class="post-img1" src="../assets/Images/8346_p26_l.jpg" alt="">
+                        <div class="Moreinformation">
+                            <h5>heading</h5>
+                            <p *ngIf="post.isMainComment">{{post.isMainComment}}</p>
+                        </div>
                     </div>
+                    <div class="video-Img-Container">
+                        <ng-container *ngFor="let pics of post.photos">
+                            <div class="post-Media-Container">
+                                <img class="post-img" src="{{pics.photoUrl}}" alt="">
+                            </div>
+                        </ng-container>
+                        <ng-container *ngFor="let vids of post.videos">
+                            <div class="video-Container">
+                                <video width="600" height="400" controls>
+                                    <source src="{{vids.postVideos}}" type="video/mp4">
+                                </video>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <form class="post-Form"[formGroup]="likePostFrom">
+                        <input type="text" readonly hidden #postID value="{{post.id}}">  
+                        <div *ngIf="postID.value" class="LikeStatus" [ngClass]="{'menu-show': !openStatus}">
+                            <input  class="Cool" type="button" value="" (click)="StatusValueCool(postID.value)" #statusID>
+                            <input  class="Wonderful" type="button" value="" (click)="StatusValueWonderful(postID.value)" #statusID>
+                            <input  class="Amazing" type="button" value="" (click)="StatusValueAmazing(postID.value)" #statusID>
+                            <input  class="Outstanding" type="button" value="" (click)="StatusValueOutstanding(postID.value)" #statusID>
+                            <input  class="TooCosmic" type="button" value="" (click)="StatusValueTooCosmic(postID.value)" #statusID>
+                            <div class="triangle"></div>
+                        </div>
+                        <ng-container>
+                            <p *ngIf="post.likeStatus.length > 0">{{post.likeStatus.length}}</p>
+                        </ng-container> 
+                        <div class="Buttons1">                             
+                            <a (click)="OnLike(postID.value)">Like</a> 
+                            <a>Comment</a>
+                            <a>Share</a>
+                        </div>
+                    </form>
+  
                 </div>
-                <ng-container *ngIf="item.photo">
-                    <div class="post-Media-Container">
-                        <img class="post-img" src="{{item.photo}}" alt="">
-                    </div>
-                </ng-container>
-                <ng-container>
-                    <div class="video-Container">
-                        <video width="600" height="400" controls>
-                            <source src="{{item.videos}}" type="video/mp4">
-                        </video>
-                    </div>
-                </ng-container>
-                <form class="post-Form">
-                    <div class="Buttons1">
-                        <a>Like</a>
-                        <a>Comment</a>
-                        <a>Share</a>
-                    </div>
-                    <input class="input-post" type="text">
-                </form>
             </div>
-        </div>
+            <ng-template #context>
+                <p>Nothing to show</p>
+            </ng-template>
+        </ng-container>
     </div>
     <div class="Right-Side-Wall">
-        <h1>Right</h1>
+        <app-right-wall></app-right-wall>
     </div>
 </div>
 <jw-modal id="modelR-2">
-    <app-upload-image></app-upload-image>
+    <app-upload-image (onUploadImageSelected)="onImageSelect($event)"></app-upload-image>
 </jw-modal>
