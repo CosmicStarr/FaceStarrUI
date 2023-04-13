@@ -1,0 +1,176 @@
+.right-Wall-Container{
+    width: 100%;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+.sponsor-Info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+.sponsor-pic-and-Name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;  
+}
+.sponsor-pic-and-Name img{
+    width: 120px;
+    height: 70px;
+    border-radius: 2px;
+}
+.user-Pages-Profile{
+    width: 100%;
+}
+.title-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    width: 100%;
+}
+.title-container h4{
+    font-weight: 700;
+}
+.page-Pic{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    width: 100%;
+}
+.page-Name{
+    font-weight: 700;
+    font-size: .8rem;
+}
+.pages-Pic-Name{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.pages-Pic-Name img{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50px;
+    background-position: center;
+}
+.notifications-Plus{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: .8rem;
+}
+.notifications-Plus p{
+    font-size: .8rem;
+}
+.notifications-Plus i{
+    color: lightblue;
+    padding-right: .5rem;
+}
+.friendRequest-Info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+}
+.friendRequest-Title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.friendRequest-Title h4{
+    font-weight: 700;
+}
+.actual-friendRequest-Info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: .5rem;
+}
+.actual-friendRequest-Info img{
+    height: 3.5rem;
+    width: 3.8rem;
+    border-radius: 50px;
+    background-position: center;
+    align-self: flex-start;
+}
+.actual-Info-Of-Friend{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    gap: .5rem;
+}
+.actual-Info-Of-Friend p{
+    font-size: .8rem;
+    font-weight: 700;
+}
+.confrim-delete{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: .5rem;
+}
+.confrim-delete input{
+    padding: .5rem;
+    width: 40%;
+    border-radius: 5px;
+    border: none;
+    
+}
+.confirmButton{
+    background-color: #0000ff;
+    color: #f5f5f5;
+}
+.birthdays{
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.birthdays img{
+    width: 3.5rem;
+}
+.birthInfo{
+    display: flex;
+    align-items: center;
+    // justify-content: flex-start;
+}
+.birthTitle h4{
+    font-weight: 700;
+}
+.birthInfo p{
+    text-align: left;
+    font-size: .8rem;
+    width: 100%;
+}
+.contacts-Information{
+    width: 100%;
+}
+.contact-Title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.contact-Title h4{
+    font-weight: 700;
+}
+.icons-for-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
+}
+.icons-for-info i{
+    color: grayscale($color: #858585);
+}

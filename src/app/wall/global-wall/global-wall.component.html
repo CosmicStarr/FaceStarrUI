@@ -25,8 +25,8 @@
                     <div class="img-Info-Container">
                         <img class="post-img2" src="../assets/Images/8346_p26_l.jpg" alt="">
                     </div>
-                    <form [formGroup]="commentForm" class="input-Container-Create">
-                        <input formControlName="comments" class="create-a-post-Input" value="What on your mind?" type="text" name="comment" id="commentId">
+                    <form [formGroup]="commentForm" class="input-Container-Create" (ngSubmit)="AddComment()">
+                        <input formControlName="comments" class="create-a-post-Input" placeholder="What on your mind?" type="text" name="comment" id="commentId">
                     </form>  
                 </div>
                 <div class="post-Form">
@@ -38,17 +38,25 @@
                 </div>        
             </div>
         </div>
-        <ng-container >
+        <ng-template #context>
+            <p>Nothing to show</p>
+        </ng-template>
+        <ng-container *ngIf='globalPost;else context'>
             <div class="Post-Container"*ngFor="let post of globalPost" >
                 <div class="actualPost-Container">
                     <div class="information">
                         <img class="post-img1" src="../assets/Images/8346_p26_l.jpg" alt="">
                         <div class="Moreinformation">
-                            <h5>heading</h5>
-                            <p *ngIf="post.isMainComment">{{post.isMainComment}}</p>
+                            <h5>{{post.email}}</h5>
+                            <div class="timeSpanObject">
+                               {{post.datePostedDTO}}
+                            </div>
                         </div>
                     </div>
-                    <div class="video-Img-Container">
+                    <div class="mainComment">
+                        <p *ngIf="post.isMainComment"> {{post.isMainComment}}</p>
+                    </div>
+                    <div class="video-Img-Container" *ngIf="post.photos || postVideos">
                         <ng-container *ngFor="let pics of post.photos">
                             <div class="post-Media-Container">
                                 <img class="post-img" src="{{pics.photoUrl}}" alt="">
@@ -84,9 +92,6 @@
   
                 </div>
             </div>
-            <ng-template #context>
-                <p>Nothing to show</p>
-            </ng-template>
         </ng-container>
     </div>
     <div class="Right-Side-Wall">

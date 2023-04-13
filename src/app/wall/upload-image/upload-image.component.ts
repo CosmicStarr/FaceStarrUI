@@ -25,6 +25,7 @@ baseUrl = environment.baseUrl;
 post:IPost
 @Output() onUploadImageSelected = new EventEmitter<File>()
 
+
   
   constructor(private wallService:WallService) {}
   ngOnInit(): void {

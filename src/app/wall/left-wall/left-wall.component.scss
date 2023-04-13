@@ -1,5 +1,5 @@
 .active{
-    color: rgb(8, 248, 248);
+    color: rgb(8, 220, 248);
 }
 .topOfContainer{
     display: flex;
@@ -8,6 +8,7 @@
     padding: .5rem;
 }
 .profile-Name{
+    cursor: pointer;
     font-size: .9rem;
 }
 .home-Icon{
@@ -42,5 +43,6 @@
     padding: .5rem;
 }
 .home-Link{
+    cursor: pointer;
     font-size: .9rem;
 }

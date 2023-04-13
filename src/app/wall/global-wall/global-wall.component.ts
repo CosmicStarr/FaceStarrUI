@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable, mergeMap, switchMap } from 'rxjs';
-import { IGetPost, ILikeAPost } from 'src/app/Models/IPost';
+import { IGetPost, ILikeAPost, IPost } from 'src/app/Models/IPost';
 import { ModalService } from 'src/app/_modal';
 import { WallService } from '../wall.service';
 
@@ -12,6 +12,7 @@ import { WallService } from '../wall.service';
 })
 export class GlobalWallComponent implements OnInit{
 
+  today: number = Date.now();
   commentForm:FormGroup
   likePostFrom:FormGroup
   showStory:boolean = false
@@ -31,7 +32,7 @@ export class GlobalWallComponent implements OnInit{
     this.getpost()
 
     this.commentForm = this.formbuilder.group({
-    comments:this.formbuilder.control('What on your mind?')
+    comments:this.formbuilder.control('')
    })
 
    this.likePostFrom = this.formbuilder.group({
@@ -58,6 +59,26 @@ export class GlobalWallComponent implements OnInit{
         
       }
     })
+  }
+
+  buildFormData = (post:IPost):FormData => {
+    const data = new FormData
+    data.append('comments',post.comments)
+    return data
+  }
+
+  //fix the post a comment method!
+  AddComment(){
+    if(this.commentForm.dirty){
+      const info = this.buildFormData(this.commentForm.value)
+      this.wallService.createAPost(info).subscribe({
+        next: (results)=> console.log(results),
+        error:(err)=> alert(err.error.message),
+        complete:()=>{
+          this.commentForm.reset(true)
+        } 
+      })
+    }
   }
 
   OnLike(id:number){

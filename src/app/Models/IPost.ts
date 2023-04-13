@@ -1,3 +1,5 @@
+import { Time } from "@angular/common"
+
 export interface IPost{
     comments?:string
     file?:File[]
@@ -9,7 +11,8 @@ export interface IGetPost{
     videos:[]
     likestatus:ILikeAPost[]
     isMainComment:string
-    appuser:string
+    email:string
+    datePostedDTO:number
 }
 
 export interface ILikeAPost{
