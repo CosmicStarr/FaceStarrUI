@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.5.
 
+This is basically a fb clone. I created it using C# Asp.net in the backend, MS Sql Server as my database of choice and just plan HTML, CSS and typescript in the front end.  
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
